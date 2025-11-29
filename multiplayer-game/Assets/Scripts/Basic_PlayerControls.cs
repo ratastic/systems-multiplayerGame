@@ -7,6 +7,8 @@ public class Basic_PlayerControls : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rb;
 
+    private static int PlayerNumber = 1;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -15,7 +17,8 @@ public class Basic_PlayerControls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        Debug.Log($"hi i am player {PlayerNumber}");
+        PlayerNumber++;
     }
 
     // Update is called once per frame
