@@ -12,10 +12,10 @@ public class Basic_PlayerControls : MonoBehaviour
 
     [Header("Jump")]
     public float jumpForce = 10f;
-    public float coyoteTime = 0.15f; // Coyote Time: Gives player extra time to jump after leaving the ground
+    public float coyoteTime = 0.15f; // Coyote Time: Player can jump after leaving the ground (Forgiving to late jump inputs)
     private float coyoteCounter;
 
-    public float jumpBufferTime = 0.15f; // Jump before landing (Player Can Spam Jump)
+    public float jumpBufferTime = 0.15f; // Buffer: Player can jump after fully landing (Forgiving to early jump inputs)
     private float jumpBufferCounter;
 
     public Transform groundCheck;
@@ -44,13 +44,13 @@ public class Basic_PlayerControls : MonoBehaviour
 
         // Coyote time
         if (isGrounded)
-            coyoteCounter = coyoteTime;
+            coyoteCounter = coyoteTime; //Resets Coyote if Grounded
         else
-            coyoteCounter -= Time.deltaTime;
+            coyoteCounter -= Time.deltaTime; //Depleat Coyote after leaving the ground
 
         // Jump buffer ticking down
-        if (jumpBufferCounter > 0)
-            jumpBufferCounter -= Time.deltaTime;
+        if (jumpBufferCounter > 0) 
+            jumpBufferCounter -= Time.deltaTime; //Depleat Buffer after Jumping
 
         // Jump logic
         if (jumpBufferCounter > 0 && coyoteCounter > 0 )
@@ -71,7 +71,7 @@ public class Basic_PlayerControls : MonoBehaviour
     {
         if (context.started)
         {
-            jumpBufferCounter = jumpBufferTime;
+            jumpBufferCounter = jumpBufferTime; //Resets Buffer if Jump
         }
 
     }
