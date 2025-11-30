@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Basic_PlayerControls : MonoBehaviour
+public class Floaty_PlayerControls : MonoBehaviour
 {
     [Header("Movement")]
     public float speed;
@@ -21,7 +21,6 @@ public class Basic_PlayerControls : MonoBehaviour
     public float groundCheckDistance = 0.1f;
     public LayerMask groundLayer; //Using a layermask, better than collision bs
 
-    public PlayerInput playerInput;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -70,42 +69,4 @@ public class Basic_PlayerControls : MonoBehaviour
         }
 
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        //if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        //{
-        //    if (other.tag == "Player1Selection")
-        //    {
-        //        //Destroy Trigger (And hide object)
-        //        gameObject.AddComponent<Speedy_PlayerControlers>();
-        //        this.enabled = false; //Disable this script
-        //        //Destroy(this); //Destroy this script
-        //    }
-        //    else if (other.tag == "Player2Selection")
-        //    {
-        //        //Destroy Trigger (And hide object)
-        //        gameObject.AddComponent<Speedy_PlayerControlers>();
-        //        this.enabled = false; //Disable this script
-        //    }
-        //}
-
-        if (other.tag == "Player1Selection")
-        {
-            GameManager gameManager = FindFirstObjectByType<GameManager>();
-            gameManager.DeletePlayerSelectionObject1();
-            gameObject.GetComponent<Speedy_PlayerControlers>().enabled = true;
-            playerInput.SwitchCurrentActionMap("Speedy_Gameplay");
-            this.enabled = false; //Disable this script
-        }
-        else if (other.tag == "Player2Selection")
-        {
-            GameManager gameManager = FindFirstObjectByType<GameManager>();
-            gameManager.DeletePlayerSelectionObject2();
-            playerInput.SwitchCurrentActionMap("Floaty_Gameplay");
-            gameObject.GetComponent<Floaty_PlayerControls>().enabled = true;
-            this.enabled = false; //Disable this script
-        }
-
-    }
-
 }

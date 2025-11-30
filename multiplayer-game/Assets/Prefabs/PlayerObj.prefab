@@ -45,6 +45,9 @@ GameObject:
   - component: {fileID: 2224545985106084957}
   - component: {fileID: 310927914508955410}
   - component: {fileID: -4140243578979433838}
+  - component: {fileID: 4064193470990443470}
+  - component: {fileID: 7863340887579279911}
+  - component: {fileID: 652462297184569494}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -229,6 +232,70 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 190beba1-f5cd-4d93-9da9-064138dd2cd6
     m_ActionName: 'Basic_Gameplay/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7863340887579279911}
+        m_TargetAssemblyTypeName: Speedy_PlayerControlers, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 16ea4b03-98d9-41df-8065-fa0246a85495
+    m_ActionName: 'Speedy_Gameplay/Movement[/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7863340887579279911}
+        m_TargetAssemblyTypeName: Speedy_PlayerControlers, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6c8e8df8-0e4d-4241-9bfa-b7b8246dc2c8
+    m_ActionName: 'Speedy_Gameplay/Jump[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 652462297184569494}
+        m_TargetAssemblyTypeName: Floaty_PlayerControls, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1b127ea-a9bd-4d04-8bed-ee0eb1cd9893
+    m_ActionName: 'Floaty_Gameplay/Movement[/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 652462297184569494}
+        m_TargetAssemblyTypeName: Floaty_PlayerControls, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c942810c-bf5f-4f7b-b194-075a921173a9
+    m_ActionName: 'Floaty_Gameplay/Jump[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Basic_Gameplay
@@ -255,6 +322,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  playerInput: {fileID: 2224545985106084957}
+  player1SelectionObj: {fileID: 3416264138454433709, guid: 3ff04ef55a903db4ab1deea0ee516ad5, type: 3}
+  player2SelectionObj: {fileID: 6512971860908678644, guid: e2299f25cc91c8347b94b0f68630c220, type: 3}
 --- !u!50 &-4140243578979433838
 Rigidbody2D:
   serializedVersion: 5
@@ -282,3 +352,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4064193470990443470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773594350036218175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 196e9ad7881b61946b49c87dae71899a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInformation
+--- !u!114 &7863340887579279911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773594350036218175}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58095004fd05f6948860bb5a0c98d5f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Speedy_PlayerControlers
+  speed: 4
+  jumpForce: 10
+  coyoteTime: 0.15
+  jumpBufferTime: 0.15
+  groundCheck: {fileID: 2098807815656443318}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &652462297184569494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773594350036218175}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b911d42ab91d1f42af0696750227af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Floaty_PlayerControls
+  speed: 1
+  jumpForce: 15
+  coyoteTime: 0.15
+  jumpBufferTime: 0.15
+  groundCheck: {fileID: 2098807815656443318}
+  groundCheckDistance: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
