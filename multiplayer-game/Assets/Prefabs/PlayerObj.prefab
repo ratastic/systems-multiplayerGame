@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4064193470990443470}
   - component: {fileID: 7863340887579279911}
   - component: {fileID: 652462297184569494}
+  - component: {fileID: 6480597153476548875}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -323,8 +324,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerInput: {fileID: 2224545985106084957}
-  player1SelectionObj: {fileID: 3416264138454433709, guid: 3ff04ef55a903db4ab1deea0ee516ad5, type: 3}
-  player2SelectionObj: {fileID: 6512971860908678644, guid: e2299f25cc91c8347b94b0f68630c220, type: 3}
 --- !u!50 &-4140243578979433838
 Rigidbody2D:
   serializedVersion: 5
@@ -406,3 +405,15 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &6480597153476548875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773594350036218175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be465bc6c68b24328aa47d85d18bab3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectOrbs

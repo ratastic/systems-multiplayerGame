@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player1Selection
   - Player2Selection
+  - orb
   layers:
   - Default
   - TransparentFX
