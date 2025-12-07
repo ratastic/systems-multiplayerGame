@@ -33,6 +33,7 @@ public class CollectOrbs : MonoBehaviour
             Destroy(col.gameObject);
             orbsCollected++;
             Debug.Log("orb collected");
+            playerInformation.AddAbilityPoint();
 
             if (orbsCollected >= orbsNeeded)
             {
