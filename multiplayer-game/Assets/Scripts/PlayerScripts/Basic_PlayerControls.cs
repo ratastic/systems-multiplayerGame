@@ -98,10 +98,12 @@ public class Basic_PlayerControls : MonoBehaviour
     {
         if (canInteract1 == true)
         {
+            playerInfo.ActivateUI();
             SelectCricketCharacter(); //Select Floaty
         }
         else if (canInteract2 == true)
         {
+            playerInfo.ActivateUI();
             SelectFlyCharacter(); //Select Speedy
         }
     }
