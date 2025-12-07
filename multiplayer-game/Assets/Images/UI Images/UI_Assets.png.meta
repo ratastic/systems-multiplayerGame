@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: c8659b08a47dd1e4f8942f45011af796
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8752026875955483287
+    second: UI_Assets_Updated-01_0
+  - first:
+      213: -6520126585911429909
+    second: UI_Assets_Updated-01_1
+  - first:
+      213: -4169720046939470000
+    second: UI_Assets_Updated-01_2
+  - first:
+      213: -4537264278380853997
+    second: UI_Assets_Updated-01_3
+  - first:
+      213: 6049089124747158325
+    second: UI_Assets_Updated-01_4
+  - first:
+      213: -8757016477944737503
+    second: UI_Assets_Updated-01_5
+  - first:
+      213: 751721097646570453
+    second: UI_Assets_Updated-01_6
+  - first:
+      213: -9187374766121917535
+    second: UI_Assets_Updated-01_7
+  - first:
+      213: -2021782255138989112
+    second: UI_Assets_Updated-01_8
+  - first:
+      213: -2399386728476998765
+    second: UI_Assets_Updated-01_9
+  - first:
+      213: 4070092748119728842
+    second: UI_Assets_Updated-01_10
+  - first:
+      213: 4227072970764903303
+    second: UI_Assets_Updated-01_11
+  - first:
+      213: -8324452486107613831
+    second: UI_Assets_Updated-01_12
+  - first:
+      213: -2564648240268261249
+    second: UI_Assets_Updated-01_13
+  - first:
+      213: -208753967859199733
+    second: UI_Assets_Updated-01_14
+  - first:
+      213: -1924698307478479575
+    second: UI_Assets_Updated-01_15
+  - first:
+      213: -6903367551769633703
+    second: UI_Assets_Updated-01_16
+  - first:
+      213: -4696933522205340841
+    second: UI_Assets_Updated-01_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_BlueHealth
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 3985
+        width: 357
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d60023ded8a8680800000000000000
+      internalID: -8752026875955483287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_BlueHealthEnd
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 3986
+        width: 424
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be43b2c4a6bd385a0800000000000000
+      internalID: -6520126585911429909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_RedHealth
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 3985
+        width: 356
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057095d95bd2226c0800000000000000
+      internalID: -4169720046939470000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_RedHealthEnd
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 3986
+        width: 424
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3154a03ad266801c0800000000000000
+      internalID: -4537264278380853997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_YellowHealth
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 3958
+        width: 373
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533ab3f628ea2f350800000000000000
+      internalID: 6049089124747158325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_YellowHealthEnd
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 3975
+        width: 424
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1219cd3f8e3d87680800000000000000
+      internalID: -8757016477944737503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health Bar
+      rect:
+        serializedVersion: 2
+        x: 3362
+        y: 3898
+        width: 3061
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbf3630b56ae6a00800000000000000
+      internalID: 751721097646570453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chat Box Red
+      rect:
+        serializedVersion: 2
+        x: 6524
+        y: 3339
+        width: 1161
+        height: 954
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a36ae6b353ef7080800000000000000
+      internalID: -9187374766121917535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_BlankAbilityPoint
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 3525
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cb904530cf21f3e0800000000000000
+      internalID: -2021782255138989112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_BlueAbilityPoint
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 3525
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3938752ab7aa3bed0800000000000000
+      internalID: -2399386728476998765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_RedAbilityPoint
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 3525
+        width: 231
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac2e1964acfdb7830800000000000000
+      internalID: 4070092748119728842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ability Bar
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 3404
+        width: 1789
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 783e81e887499aa30800000000000000
+      internalID: 4227072970764903303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Ring Blue
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2199
+        width: 1090
+        height: 1090
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97530f7919a997c80800000000000000
+      internalID: -8324452486107613831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Ring Red
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 2199
+        width: 1090
+        height: 1090
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78caf8730a886cd0800000000000000
+      internalID: -2564648240268261249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite BG
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 2224
+        width: 1045
+        height: 1044
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b019c4c4f5b5a1df0800000000000000
+      internalID: -208753967859199733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chat Box Blue
+      rect:
+        serializedVersion: 2
+        x: 6524
+        y: 2281
+        width: 1161
+        height: 954
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d13fa36191a45e0800000000000000
+      internalID: -1924698307478479575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_BGBar1
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 740
+        width: 3607
+        height: 1395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c10da89cf4230a0800000000000000
+      internalID: -6903367551769633703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_BGBar2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 36
+        width: 7874
+        height: 653
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b8353d8d321deb0800000000000000
+      internalID: -4696933522205340841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ability Bar: 4227072970764903303
+      Chat Box Blue: -1924698307478479575
+      Chat Box Red: -9187374766121917535
+      Health Bar: 751721097646570453
+      Sprite BG: -208753967859199733
+      Sprite Ring Blue: -8324452486107613831
+      Sprite Ring Red: -2564648240268261249
+      UI_BGBar1: -6903367551769633703
+      UI_BGBar2: -4696933522205340841
+      UI_BlankAbilityPoint: -2021782255138989112
+      UI_BlueAbilityPoint: -2399386728476998765
+      UI_BlueHealth: -8752026875955483287
+      UI_BlueHealthEnd: -6520126585911429909
+      UI_RedAbilityPoint: 4070092748119728842
+      UI_RedHealth: -4169720046939470000
+      UI_RedHealthEnd: -4537264278380853997
+      UI_YellowHealth: 6049089124747158325
+      UI_YellowHealthEnd: -8757016477944737503
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,12 +1,152 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Player Selection")]
+
     public GameObject playerSelectionObj1;
     public GameObject playerSelectionObj2;
 
     public GameObject playerSelectionText1;
     public GameObject playerSelectionText2;
+
+    [Header("Player UI")]
+    public Sprite Cricket;
+    public Sprite Fly;
+    public Sprite Skull;
+    public Sprite deactiveAbilitySprite;
+
+    [Header("Player 1 UI")]
+
+    public GameObject player1UI;
+    public Image player1ProfileSpriteRender;
+
+    public GameObject[] player1HealthUI;
+    public int player1HealthNum;
+
+    public Image[] player1AbilitySpriteRender;
+    public Sprite tealActiveAbilitySprite;
+    public int player1AbilityNum;
+
+    [Header("Player 2 UI")]
+
+    public GameObject player2UI;
+    public Image player2ProfileSpriteRender;
+
+    public GameObject[] player2HealthUI;
+    public int player2HealthNum;
+
+    public Image[] player2AbilitySpriteRender;
+    public Sprite redActiveAbilitySprite;
+    public int player2AbilityNum;
+
+    //PLAYER UI
+
+    public void AssignProfileSprite(Image playerRenderer, Sprite playerSprite)
+    {
+        playerRenderer.sprite = playerSprite;
+    }
+
+    public void UpdatePlayerHealth1()
+    {
+        for (int i = 0; i < player1HealthUI.Length; i++)
+        {
+            // If the current index (i) is greater than or equal to the Target Number, Deactivate
+            if (i + 1 >= player1HealthNum)
+            {
+                if (player1HealthUI[i] != null) // Check if its active
+                {
+                    player1HealthUI[i].SetActive(false);
+                }
+            }
+
+            // If the current index (i) is less than or equal to the Target Number, Activate
+            if (i <= player1HealthNum)
+            {
+                if (player1HealthUI[i] != null) // Check if its active
+                {
+                    player1HealthUI[i].SetActive(true);
+                }
+            }
+        }
+
+    }
+    public void UpdatePlayerAbility1()
+    {
+        for (int i = 0; i < player1AbilitySpriteRender.Length; i++)
+        {
+            // If the current index (i) is greater than or equal to the Target Number, Deactivate
+            if (i + 1 >= player1AbilityNum)
+            {
+                if (player1AbilitySpriteRender[i] != null) // Check if its active
+                {
+                    player1AbilitySpriteRender[i].sprite = deactiveAbilitySprite;
+                }
+            }
+
+            // If the current index (i) is less than or equal to the Target Number, Activate
+            if (i <= player1AbilityNum)
+            {
+                if (player1AbilitySpriteRender[i] != null) // Check if its active
+                {
+                    player1AbilitySpriteRender[i].sprite = tealActiveAbilitySprite;
+                }
+            }
+        }
+
+    }
+
+    public void UpdatePlayerHealth2()
+    {
+            for (int i = 0; i < player1AbilitySpriteRender.Length; i++)
+        {
+            // If the current index (i) is greater than or equal to the Target Number, Deactivate
+            if (i + 1 >= player2HealthNum)
+            {
+                if (player2HealthUI[i] != null) // Check if its active
+                {
+                    player2HealthUI[i].SetActive(false);
+                }
+            }
+
+            // If the current index (i) is less than or equal to the Target Number, Activate
+            if (i <= player2HealthNum)
+            {
+                if (player2HealthUI[i] != null) // Check if its active
+                {
+                    player2HealthUI[i].SetActive(true);
+                }
+            }
+        }
+
+    }
+    public void UpdatePlayerAbility2()
+    {
+        for (int i = 0; i < player2AbilitySpriteRender.Length; i++)
+        {
+            // If the current index (i) is greater than or equal to the Target Number, Deactivate
+            if (i + 1 >= player2AbilityNum)
+            {
+                if (player2AbilitySpriteRender[i] != null) // Check if its active
+                {
+                    player2AbilitySpriteRender[i].sprite = deactiveAbilitySprite;
+                }
+            }
+
+            // If the current index (i) is less than or equal to the Target Number, Activate
+            if (i <= player2AbilityNum)
+            {
+                if (player2AbilitySpriteRender[i] != null) // Check if its active
+                {
+                    player2AbilitySpriteRender[i].sprite = redActiveAbilitySprite; 
+                }
+            }
+        }
+
+    }
+
+    //PLAYER SELECTION
 
     //Delete Object
     public void DeletePlayerSelectionObject1()

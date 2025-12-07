@@ -33,11 +33,14 @@ public class Basic_PlayerControls : MonoBehaviour
 
     public PlayerInput playerInput;
     private GameManager gameManager;
+    private PlayerInformation playerInfo;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         gameManager = FindFirstObjectByType<GameManager>();
         playerFlipScript = GetComponent<FlipPlayer>();
+        playerInfo = GetComponent<PlayerInformation>();
     }
 
     // Update is called once per frame
@@ -145,10 +148,12 @@ public class Basic_PlayerControls : MonoBehaviour
         }
 
     }
-
     private void SelectCricketCharacter()
     {
         gameManager.DeletePlayerSelectionObject1(); //Delete trigger
+
+        playerInfo.PlayerAssignedCricket = true;
+        playerInfo.ActivateUI();
 
         gameObject.GetComponent<Floaty_PlayerControls>().enabled = true; //Enable new Controls
         playerInput.SwitchCurrentActionMap("Floaty_Gameplay"); //Switch Action Inputs
@@ -160,6 +165,9 @@ public class Basic_PlayerControls : MonoBehaviour
     private void SelectFlyCharacter()
     {
         gameManager.DeletePlayerSelectionObject2(); //Delete trigger
+
+        playerInfo.PlayerAssignedFly = true;
+        playerInfo.ActivateUI();
 
         gameObject.GetComponent<Speedy_PlayerControlers>().enabled = true; //Enable new Controls
         playerInput.SwitchCurrentActionMap("Speedy_Gameplay"); //Switch Action Inputs

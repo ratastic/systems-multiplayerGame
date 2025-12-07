@@ -7,6 +7,9 @@ public class CollectOrbs : MonoBehaviour
     private int orbsCollected = 0; 
     public int orbsNeeded = 3;
     private bool canUseAbility;
+
+    private PlayerInformation playerInformation;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +48,7 @@ public class CollectOrbs : MonoBehaviour
             Debug.Log("ability used and canUseAbility set to false again");
             orbsCollected = 0;
             canUseAbility = false;
+            playerInformation.ResetAbiliyScore();
         }
     }
 }
