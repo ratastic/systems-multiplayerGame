@@ -27,6 +27,8 @@ public class Basic_PlayerControls : MonoBehaviour
     public float groundCheckDistance = 0.1f;
     public LayerMask groundLayer; //Using a layermask, better than collision bs
 
+   // private SceneTransition sceneTransitionScript;
+
     [Header("Interaction")]
     private bool canInteract1 = false;
     private bool canInteract2 = false;
@@ -41,6 +43,7 @@ public class Basic_PlayerControls : MonoBehaviour
         gameManager = FindFirstObjectByType<GameManager>();
         playerFlipScript = GetComponent<FlipPlayer>();
         playerInfo = GetComponent<PlayerInformation>();
+       // sceneTransitionScript = FindFirstObjectByType<sceneTransitionScript>();
     }
 
     // Update is called once per frame
@@ -152,6 +155,7 @@ public class Basic_PlayerControls : MonoBehaviour
     }
     private void SelectCricketCharacter()
     {
+        Debug.Log("cricket selected");
         gameManager.DeletePlayerSelectionObject1(); //Delete trigger
 
         playerInfo.PlayerAssignedCricket = true;
@@ -160,12 +164,15 @@ public class Basic_PlayerControls : MonoBehaviour
         gameObject.GetComponent<Floaty_PlayerControls>().enabled = true; //Enable new Controls
         playerInput.SwitchCurrentActionMap("Floaty_Gameplay"); //Switch Action Inputs
 
+       // sceneTransitionScript.CheckForPlayerSelection();
+    
         Speedy_PlayerControlers otherscript = GetComponent<Speedy_PlayerControlers>();
         Destroy(otherscript); //Destroy other script
         Destroy(this); //Destroy this script
     }
     private void SelectFlyCharacter()
     {
+        Debug.Log("fly selected");
         gameManager.DeletePlayerSelectionObject2(); //Delete trigger
 
         playerInfo.PlayerAssignedFly = true;
