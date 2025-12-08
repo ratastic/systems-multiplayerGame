@@ -1013,6 +1013,7 @@ GameObject:
   - component: {fileID: 360174631}
   - component: {fileID: 360174629}
   - component: {fileID: 360174630}
+  - component: {fileID: 360174632}
   m_Layer: 0
   m_Name: GAME_MANAGER
   m_TagString: Untagged
@@ -1072,6 +1073,8 @@ MonoBehaviour:
   - {fileID: 769315542}
   redActiveAbilitySprite: {fileID: 4070092748119728842, guid: c8659b08a47dd1e4f8942f45011af796, type: 3}
   player2AbilityNum: 0
+  player1Selected: 0
+  player2Selected: 0
 --- !u!4 &360174628
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1132,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenTransitions
   screenAnimator: {fileID: 2081183494}
+--- !u!114 &360174632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360174626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0fb426ebef0430c80058f660218c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
+  gameManagerScript: {fileID: 360174627}
+  playerSelectionObj1: {fileID: 491636051}
+  playerSelectionObj2: {fileID: 1002425273}
+  sceneCanTranstition: 0
 --- !u!1 &379160695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,11 +1696,11 @@ Transform:
   m_GameObject: {fileID: 491636051}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0600004, y: 1.1400001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.18019821, y: 2.5691435, z: 0}
+  m_LocalScale: {x: 0.050731476, y: 1.3812599, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1996973630}
+  m_Father: {fileID: 633404194}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &491636054
 BoxCollider2D:
@@ -7273,7 +7292,8 @@ Transform:
   m_LocalPosition: {x: -6.998, y: 1.14, z: 0}
   m_LocalScale: {x: 19.711628, y: 0.7239767, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 491636053}
   m_Father: {fileID: 2096460529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637034291
@@ -11577,7 +11597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1937416627
 Transform:
   m_ObjectHideFlags: 0
@@ -11761,7 +11781,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 42983081}
-  - {fileID: 491636053}
   m_Father: {fileID: 2096460529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024867832

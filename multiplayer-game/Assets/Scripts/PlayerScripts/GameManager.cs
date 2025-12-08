@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     public Sprite redActiveAbilitySprite;
     public int player2AbilityNum;
 
+    public bool player1Selected = false;
+    public bool player2Selected = false;
+
     //PLAYER UI
 
     public void AssignProfileSprite(Image playerRenderer, Sprite playerSprite)
@@ -152,11 +155,13 @@ public class GameManager : MonoBehaviour
     public void DeletePlayerSelectionObject1()
     {
         playerSelectionObj1.SetActive(false);
+        player1Selected = true;
     }
 
     public void DeletePlayerSelectionObject2()
     {
         playerSelectionObj2.SetActive(false);
+        player2Selected = true;
     }
 
     //Toggle On
