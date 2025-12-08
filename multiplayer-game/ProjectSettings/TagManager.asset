@@ -8,6 +8,7 @@ TagManager:
   - Player2Selection
   - orb
   - battleGround
+  - door
   layers:
   - Default
   - TransparentFX
