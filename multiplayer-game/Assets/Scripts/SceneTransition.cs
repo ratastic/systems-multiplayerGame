@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -7,17 +9,25 @@ public class SceneTransition : MonoBehaviour
     public GameObject playerSelectionObj2;
 
     public bool sceneCanTranstition;
+    public GameObject door;
+    public GameObject bossCam;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sceneCanTranstition = false;
+        door.SetActive(false);
+        bossCam.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckForPlayerSelection();
+        if (sceneCanTranstition == true)
+        {
+            door.SetActive(true);
+        }
     }
 
     public void CheckForPlayerSelection()
