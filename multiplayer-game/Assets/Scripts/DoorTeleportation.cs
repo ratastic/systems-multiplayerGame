@@ -10,6 +10,8 @@ public class DoorTeleportation : MonoBehaviour
     private bool speedySpawned = false;
     public GameObject bossCam;
     public GameObject lobbyCam;
+
+    public bool gameIsNotReady = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,11 @@ public class DoorTeleportation : MonoBehaviour
             Debug.Log("both players in new scene!!!");
             bossCam.SetActive(true);
             lobbyCam.SetActive(false);
+            gameIsNotReady = false;
+        }
+        else 
+        {
+            gameIsNotReady = true;
         }
     }
 
