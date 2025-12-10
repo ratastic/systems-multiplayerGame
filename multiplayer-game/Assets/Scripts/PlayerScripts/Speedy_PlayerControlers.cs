@@ -41,24 +41,27 @@ public class Speedy_PlayerControlers : MonoBehaviour
 
     private bool isWallSliding;
     public float wallSlideSpeed = -2f;
-    private DoorTeleportation doorTeleportation;
+   // private DoorTeleportation doorTeleportation;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerFlipScript = GetComponent<FlipPlayer>();
-        doorTeleportation = FindFirstObjectByType<DoorTeleportation>();
     }
+
+    // private void Start()
+    // {
+    //     doorTeleportation = FindFirstObjectByType<DoorTeleportation>();
+    // }
 
     // Update is called once per frame
     void Update()
     {
-        if (doorTeleportation.gameIsNotReady == false)
-        {
+        // if (doorTeleportation.gameIsNotReady == false && doorTeleportation.speedySpawned == false)
+        // {
             MovementLogic();
             WallDetectionLogic();
-        }
-       
+        //}
     }
 
     private void MovementLogic()

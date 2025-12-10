@@ -22,19 +22,21 @@ public class BossController : MonoBehaviour
     public SpriteRenderer bossSprite;
 
     // BOSS STATE MACHINE
-    public enum SpiderState { Idle, FireRadius, SpiderRain, PunchGround, Death }
+    public enum SpiderState { Begin, Idle, FireRadius, SpiderRain, PunchGround, Death }
     private SpiderState currentSpiderState;
     private float timer;
     private float timeNeededToWait;
+    private float randomIdleLength;
     private bool coroutineStarted = false;
     private int previousState = -1;
     private int currentState = -1;
 
     private void Start()
     {
-        currentSpiderState = SpiderState.Idle;
+        currentSpiderState = SpiderState.Begin;
         timer = 0;
-        timeNeededToWait = 2.0f;
+        timeNeededToWait = 5.0f;
+        randomIdleLength = Random.Range(5f, 8f);
         //StartCoroutine(BossLoop());
     }
 
@@ -59,6 +61,9 @@ public class BossController : MonoBehaviour
         timer += Time.deltaTime;
         switch (currentSpiderState) // SWITCH BETWEEN IDLE STATE, ATTACK STATES, AND DEFEATED STATE
         {
+            case SpiderState.Begin:
+                Emerge();
+                break;
             case SpiderState.Idle: 
                 if (!coroutineStarted)
                 {
@@ -106,6 +111,17 @@ public class BossController : MonoBehaviour
         return (SpiderState)r;
     }
 
+    private void Emerge()
+    {
+        Debug.Log("spider emerging");
+        if (timer >= timeNeededToWait)
+        {
+            timer = 0.0f;
+            currentSpiderState = SpiderState.Idle;
+            timeNeededToWait = 5f;
+        }
+    }
+
     private void Idle() // RETURNS TO IDLE STATE AFTER EVERY ATTACK
     {
         Debug.Log("idle sequence");
@@ -128,7 +144,7 @@ public class BossController : MonoBehaviour
             timer = 0.0f;
             coroutineStarted = false;
             currentSpiderState = SpiderState.Idle;
-            timeNeededToWait = 5f;
+            timeNeededToWait = randomIdleLength;
         }
     }
 
@@ -141,7 +157,7 @@ public class BossController : MonoBehaviour
             timer = 0.0f;
             coroutineStarted = false;
             currentSpiderState = SpiderState.Idle;
-            timeNeededToWait = 5f;
+            timeNeededToWait = randomIdleLength;
         }
     }
 
@@ -154,7 +170,7 @@ public class BossController : MonoBehaviour
             timer = 0.0f;
             coroutineStarted = false;
             currentSpiderState = SpiderState.Idle;
-            timeNeededToWait = 5f;
+            timeNeededToWait = randomIdleLength;
         }
     }
 

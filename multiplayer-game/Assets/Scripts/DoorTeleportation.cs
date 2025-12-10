@@ -6,16 +6,17 @@ public class DoorTeleportation : MonoBehaviour
 {
     public Vector2 floatySpawn = new Vector2(40f, 0f);
     public Vector2 speedySpawn = new Vector2(50f, 0f);
-    private bool floatySpawned = false;
-    private bool speedySpawned = false;
+    public bool floatySpawned = false;
+    public bool speedySpawned = false;
     public GameObject bossCam;
     public GameObject lobbyCam;
 
     public bool gameIsNotReady = true;
+    public GameObject spiderBoss;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -26,12 +27,15 @@ public class DoorTeleportation : MonoBehaviour
             Debug.Log("both players in new scene!!!");
             bossCam.SetActive(true);
             lobbyCam.SetActive(false);
-            gameIsNotReady = false;
+            spiderBoss.SetActive(true);
+            //gameIsNotReady = false;
+            FindFirstObjectByType<Floaty_PlayerControls>().enabled = true;
+            FindFirstObjectByType<Speedy_PlayerControlers>().enabled = true;
         }
-        else 
-        {
-            gameIsNotReady = true;
-        }
+        // else 
+        // {
+        //     gameIsNotReady = true;
+        // }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -42,7 +46,7 @@ public class DoorTeleportation : MonoBehaviour
             Debug.Log("floaty teleported");
             floaty.transform.position = floatySpawn;
             floatySpawned = true;
-            // maybe add something to prevent movement for floaty (?) 
+            floaty.enabled = false;
         }
 
         Speedy_PlayerControlers speedy = col.gameObject.GetComponent<Speedy_PlayerControlers>();
@@ -51,7 +55,7 @@ public class DoorTeleportation : MonoBehaviour
             Debug.Log("speedy teleported");
             speedy.transform.position = speedySpawn;
             speedySpawned = true;
-            // maybe add something to prevent movement for speedy (?) 
+            speedy.enabled = false;
         }
     }
 }
