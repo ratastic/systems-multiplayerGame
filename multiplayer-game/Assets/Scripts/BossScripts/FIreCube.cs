@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FireCube : MonoBehaviour
 {
-    public float life = 0.8f;
+    public float life = 5f;
     SpriteRenderer sr;
     float t;
 

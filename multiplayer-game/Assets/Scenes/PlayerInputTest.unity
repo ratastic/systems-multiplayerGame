@@ -727,14 +727,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossController
   fireCubePrefab: {fileID: 2288097011551234507, guid: 1ea48f4bd075f2440a818650c688c9cf, type: 3}
-  fireSegments: 20
-  fireRadius: 2
-  fireCubeLifetime: 2
-  fireExpandAmount: 1
+  fireSegments: 15
+  fireRadius: 1
+  fireCubeLifetime: 30
+  fireExpandAmount: 20
   spiderPrefab: {fileID: 726439293715933708, guid: 0c29893ee4474324b9d350ea8110e7a5, type: 3}
   spiderCount: 5
-  spiderSpawnHeight: 5
-  spiderSpread: 1.5
+  spiderSpawnHeight: 20
+  spiderSpread: 15
   glowDuration: 0.5
   bossSprite: {fileID: 726593881}
 --- !u!1 &203772366

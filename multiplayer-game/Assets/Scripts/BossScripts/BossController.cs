@@ -8,7 +8,7 @@ public class BossController : MonoBehaviour
     public GameObject fireCubePrefab;
     public int fireSegments = 20;
     public float fireRadius = 25f;
-    public float fireCubeLifetime = 2f;
+    public float fireCubeLifetime = 10f;
     public float fireExpandAmount = 15f;
 
     [Header("Spider Rain Settings")]
@@ -27,6 +27,8 @@ public class BossController : MonoBehaviour
     private float timer;
     private float timeNeededToWait;
     private bool coroutineStarted = false;
+    private int previousState = -1;
+    private int currentState = -1;
 
     private void Start()
     {
@@ -93,6 +95,14 @@ public class BossController : MonoBehaviour
     private SpiderState RandomAttack() // RANDOM ATTACK PLAYED AFTER IDLE STATE / GRACE PERIOD
     {
         int r = Random.Range(1, 4);
+        while (previousState == currentState && r == currentState)
+        {
+            r = Random.Range(1, 4);
+        }
+
+        previousState = currentState;
+        currentState = r;
+
         return (SpiderState)r;
     }
 
@@ -190,9 +200,8 @@ public class BossController : MonoBehaviour
         while (t < 1f)
         {
             if (cube == null) yield break;
-
-            cube.transform.position = initialPos + direction * (t * fireExpandAmount);
             t += Time.deltaTime;
+            cube.transform.position = initialPos + direction * (t * fireExpandAmount);
             yield return null;
         }
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2312525654966649073}
   - component: {fileID: 1900013120720418832}
   - component: {fileID: 4533919609593552085}
-  - component: {fileID: 6244022052909997433}
   m_Layer: 0
   m_Name: spider
   m_TagString: Untagged
@@ -138,17 +137,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6244022052909997433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726439293715933708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3261b04e6b78fa7428e4369f646fc67b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpiderCube
-  hatchCubePrefab: {fileID: 726439293715933708}
-  fadeTime: 0.4
