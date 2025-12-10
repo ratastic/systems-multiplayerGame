@@ -9,6 +9,7 @@ TagManager:
   - orb
   - battleGround
   - door
+  - boss
   layers:
   - Default
   - TransparentFX
