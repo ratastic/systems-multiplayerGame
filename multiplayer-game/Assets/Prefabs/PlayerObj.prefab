@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectOrbs
   orbsNeeded: 3
+  playerInformation: {fileID: 4064193470990443470}
 --- !u!1 &6479432961166911752
 GameObject:
   m_ObjectHideFlags: 0

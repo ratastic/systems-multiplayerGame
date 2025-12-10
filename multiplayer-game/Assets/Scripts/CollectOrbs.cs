@@ -8,7 +8,7 @@ public class CollectOrbs : MonoBehaviour
     public int orbsNeeded = 3;
     private bool canUseAbility;
 
-    private PlayerInformation playerInformation;
+    public PlayerInformation playerInformation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
