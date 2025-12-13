@@ -9,7 +9,8 @@ public class OrbManager : MonoBehaviour
 
     [Header("Orb Spawn Point")]
     public Vector2 horizontalSpawnRange = new Vector2(-6.5f, 6.5f);
-    public Vector2 verticalSpawnRange = new Vector2(5.5f, -3.5f);
+    //public Vector2 verticalSpawnRange = new Vector2(5.5f, -3.5f);
+    private float orbYSpawn = 17f;
 
     private List<GameObject> activeOrbs = new List<GameObject>();
     private Coroutine spawnOrbs;
@@ -30,10 +31,13 @@ public class OrbManager : MonoBehaviour
         while (true)
         {
             float randomX = Random.Range(horizontalSpawnRange.x, horizontalSpawnRange.y); // range for random horizontal spawn position
-            float randomY = Random.Range(verticalSpawnRange.x, verticalSpawnRange.y); // range for random vertical spawn position
-            Vector2 orbSpawnPos = new Vector2(randomX, randomY); // exact spawn position
+            //float randomY = Random.Range(verticalSpawnRange.x, verticalSpawnRange.y); // range for random vertical spawn position
+            Vector2 orbSpawnPos = new Vector2(randomX, orbYSpawn); // exact spawn position
             GameObject newOrb = Instantiate(orbPrefab, orbSpawnPos, Quaternion.identity); // instantiate the new orb
             activeOrbs.Add(newOrb); // add orb to activeOrbs list
+
+            Destroy(newOrb, 10f); // destroy orb after 10 seconds
+
             yield return new WaitForSeconds(spawnInterval); // time between each spawn
         }
     }

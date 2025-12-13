@@ -20,6 +20,7 @@ public class BossController : MonoBehaviour
     [Header("Glow Settings")]
     public float glowDuration = 0.5f;
     public SpriteRenderer bossSprite;
+    private Color originalBossColor;
 
     // BOSS STATE MACHINE
     public enum SpiderState { Begin, Idle, FireRadius, SpiderRain, PunchGround, Death }
@@ -33,6 +34,12 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
+
+        if (bossSprite != null)
+        {
+            originalBossColor = bossSprite.color;
+        }
+       
         currentSpiderState = SpiderState.Begin;
         timer = 0;
         timeNeededToWait = 5.0f;
@@ -257,7 +264,7 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(timeNeededToWait - 1f);
             bossSprite.color = Color.red;
             yield return new WaitForSeconds(glowDuration);
-            bossSprite.color = Color.white;
+            bossSprite.color = originalBossColor;
         }
     }
 }

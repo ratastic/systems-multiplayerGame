@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f877f8f0f8938d4d81a098d70384635
+guid: aadb23d94069b4f16a9a8ec0c30a5ef9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8845487728556692562
-    second: Background_Cave_0
+      213: 3898920674672187452
+    second: IMG_8616_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Cave_0
+      name: IMG_8616_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 1201
+        y: 392
+        width: 246
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eab2d4ab6c38e3580800000000000000
-      internalID: -8845487728556692562
+      spriteID: c38134d32bfbb1630800000000000000
+      internalID: 3898920674672187452
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background_Cave_0: -8845487728556692562
+      IMG_8616_0: 3898920674672187452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

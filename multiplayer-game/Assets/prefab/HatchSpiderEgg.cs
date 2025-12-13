@@ -26,16 +26,4 @@ public class HatchSpiderEgg : MonoBehaviour
             Debug.Log("egg hit ground and hatching");
         }
     }
-
-    // private void OnParticleCollision2D(GameObject other)
-    // {
-    //     if(other.gameObject.CompareTag("Player"))
-    //     {
-    //         Debug.Log(other.tag);
-    //     }
-        // if (other.gameObject.CompareTag("Player"))
-        // {
-        //     Debug.Log("baby spider hit player");
-        // }
-    //}
 }
