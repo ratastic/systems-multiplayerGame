@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 652462297184569494}
   - component: {fileID: -4286752867601993302}
   - component: {fileID: 6480597153476548875}
+  - component: {fileID: 2781561368980135833}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Player
@@ -419,6 +420,8 @@ MonoBehaviour:
   playerIsDead: 0
   PlayerHealthNum: 0
   PlayerAbilityNum: 0
+  PlayerMaxHealth: 100
+  OrbHealAmount: 3
   PlayerAssignedCricket: 0
   PlayerAssignedFly: 0
 --- !u!114 &7863340887579279911
@@ -506,6 +509,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectOrbs
   orbsNeeded: 3
   playerInformation: {fileID: 4064193470990443470}
+  healColor: {r: 0.2569139, g: 1, b: 0, a: 1}
+  healFlashDuration: 0.2
+--- !u!114 &2781561368980135833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773594350036218175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34424abe2281c4e5f86d4cda7832ae04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossDamage
+  handDamage: 5
+  venomDamage: 6
+  eggDamage: 4
+  spikeDamage: 3
+  cooldown: 5
+  canBeHit: 0
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
 --- !u!1 &6479432961166911752
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,19 @@ public class CollectOrbs : MonoBehaviour
 
     public PlayerInformation playerInformation;
 
+    [Header("HEAL COLOR")]
+    public Color healColor;
+    public float healFlashDuration = .2f;
+
+    private SpriteRenderer sr;
+    private Color originalColor;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         canUseAbility = false;
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
     }
 
     // Update is called once per frame
@@ -22,7 +31,11 @@ public class CollectOrbs : MonoBehaviour
         if (canUseAbility == true)
         {
             Debug.Log("can use ability");
-            UseAbility();
+            
+            if (Input.GetKeyDown(KeyCode.P) && playerInformation.PlayerHealthNum < playerInformation.PlayerMaxHealth) // change this so that xbox controller reads it 
+            {
+                UseAbility();
+            }
         }
     }
     
@@ -44,12 +57,18 @@ public class CollectOrbs : MonoBehaviour
 
     private void UseAbility()
     {
-        if (Input.GetKeyDown(KeyCode.P)) // change this so that xbox controller reads it 
-        {
-            Debug.Log("ability used and canUseAbility set to false again");
-            orbsCollected = 0;
-            canUseAbility = false;
-            playerInformation.ResetAbiliyScore();
-        }
+        StartCoroutine(HealFlash());
+        Debug.Log("ability used and canUseAbility set to false again");
+        orbsCollected = 0;
+        canUseAbility = false;
+        playerInformation.ResetAbiliyScore();
+        playerInformation.HealPlayer();
+    }
+
+    private IEnumerator HealFlash()
+    {
+        sr.color = healColor;
+        yield return new WaitForSeconds(healFlashDuration);
+        sr.color = originalColor;
     }
 }

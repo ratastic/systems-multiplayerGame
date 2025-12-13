@@ -120,7 +120,6 @@ public class BossController : MonoBehaviour
 
     private void Emerge()
     {
-        Debug.Log("spider emerging");
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
@@ -131,7 +130,6 @@ public class BossController : MonoBehaviour
 
     private void Idle() // RETURNS TO IDLE STATE AFTER EVERY ATTACK
     {
-        Debug.Log("idle sequence");
         // call idle animation here
         if (timer >= timeNeededToWait)
         {
@@ -144,8 +142,6 @@ public class BossController : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("fire radius sequence");
-
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
@@ -157,8 +153,6 @@ public class BossController : MonoBehaviour
 
     private void Rain()
     {
-        Debug.Log("spider rain sequence");
-
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
@@ -170,8 +164,6 @@ public class BossController : MonoBehaviour
 
     private void Punch()
     {
-        Debug.Log("punch ground sequence");
-
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;

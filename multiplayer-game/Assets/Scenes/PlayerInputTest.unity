@@ -1205,9 +1205,9 @@ GameObject:
   - component: {fileID: 321097713}
   - component: {fileID: 321097714}
   - component: {fileID: 321097715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: rightSpike
-  m_TagString: Untagged
+  m_TagString: spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7469,9 +7469,9 @@ GameObject:
   - component: {fileID: 522051560}
   - component: {fileID: 522051561}
   - component: {fileID: 522051562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: leftSpike
-  m_TagString: Untagged
+  m_TagString: spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9824,7 +9824,7 @@ GameObject:
   - component: {fileID: 1006037126}
   m_Layer: 3
   m_Name: bossPF03
-  m_TagString: Untagged
+  m_TagString: battleGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10266,7 +10266,7 @@ GameObject:
   - component: {fileID: 1080792457}
   m_Layer: 3
   m_Name: bossPF01
-  m_TagString: Untagged
+  m_TagString: battleGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11473,7 +11473,7 @@ GameObject:
   - component: {fileID: 1362406059}
   m_Layer: 3
   m_Name: bossPF02
-  m_TagString: Untagged
+  m_TagString: battleGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13478,7 +13478,7 @@ GameObject:
   - component: {fileID: 1934891510}
   m_Layer: 3
   m_Name: bossPF04
-  m_TagString: Untagged
+  m_TagString: battleGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13984,7 +13984,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: 21300000, guid: 6f877f8f0f8938d4d81a098d70384635, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

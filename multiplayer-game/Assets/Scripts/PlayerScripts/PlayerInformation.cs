@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerInformation : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerInformation : MonoBehaviour
     public bool playerIsDead;
     public int PlayerHealthNum;
     public int PlayerAbilityNum;
+    public int PlayerMaxHealth = 100;
+    public int OrbHealAmount = 3;
 
     public bool PlayerAssignedCricket = false;
     public bool PlayerAssignedFly = false;
@@ -21,7 +25,8 @@ public class PlayerInformation : MonoBehaviour
 
         gameManager = FindFirstObjectByType<GameManager>();
 
-        PlayerHealthNum = 6;
+        PlayerHealthNum = PlayerMaxHealth;
+    
         PlayerAbilityNum = 0;
     }
 
@@ -118,15 +123,17 @@ public class PlayerInformation : MonoBehaviour
 
     public void HealPlayer()
     {
-        if (PlayerHealthNum < 6)
+        if (PlayerHealthNum < PlayerMaxHealth)
         {
-            PlayerHealthNum += 1;
+            PlayerHealthNum += Mathf.Min(OrbHealAmount, PlayerMaxHealth - PlayerHealthNum);
             UpdateUI();
         }
     }
-    public void HurtPlayer()
+
+    public void HurtPlayer(int damageDealt)
     {
-        PlayerHealthNum += 1;
+        PlayerHealthNum -= damageDealt;
+        Debug.Log(PlayerHealthNum);
         UpdateUI();
         CheckForDeath();
     }
@@ -136,6 +143,7 @@ public class PlayerInformation : MonoBehaviour
         if (PlayerHealthNum <= 0)
         {
             KillPlayer();
+            Debug.Log("player is dead");
         }
     }
 

@@ -12,6 +12,8 @@ TagManager:
   - boss
   - egg
   - venom
+  - bossHand
+  - spike
   layers:
   - Default
   - TransparentFX
