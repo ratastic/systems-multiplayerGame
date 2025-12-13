@@ -44,6 +44,7 @@ public class BossDamage : MonoBehaviour
         else if (col.gameObject.CompareTag("venom"))
         {
             playerInfo.HurtPlayer(venomDamage);
+            Destroy(col.gameObject);
             StartCoroutine(Cooldown());
         } 
         else if (col.gameObject.CompareTag("egg"))
