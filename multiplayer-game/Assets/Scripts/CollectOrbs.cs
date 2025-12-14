@@ -28,10 +28,15 @@ public class CollectOrbs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public void StartAbility()
+    {
         if (canUseAbility == true)
         {
             Debug.Log("can use ability");
-            
+
             if (Input.GetKeyDown(KeyCode.P) && playerInformation.PlayerHealthNum < playerInformation.PlayerMaxHealth) // change this so that xbox controller reads it 
             {
                 UseAbility();

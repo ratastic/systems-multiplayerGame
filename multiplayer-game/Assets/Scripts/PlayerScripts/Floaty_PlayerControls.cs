@@ -39,11 +39,18 @@ public class Floaty_PlayerControls : MonoBehaviour
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
+    private SpriteRenderer playerSpriteRenderer;
+    public Sprite cricketSprite;
+    private CollectOrbs healthScript;
 
-    void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerFlipScript = GetComponent<FlipPlayer>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        playerSpriteRenderer.sprite = cricketSprite;
+        healthScript = GetComponent<CollectOrbs>();
+
     }
 
     // Update is called once per frame
@@ -155,4 +162,10 @@ public class Floaty_PlayerControls : MonoBehaviour
         }
 
     }
+    public void OnAbility(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            healthScript.StartAbility();
+    }
+
 }

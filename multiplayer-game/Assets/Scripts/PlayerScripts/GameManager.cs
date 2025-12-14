@@ -55,22 +55,18 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < player1HealthUI.Length; i++)
         {
-            // If the current index (i) is greater than or equal to the Target Number, Deactivate
-            if (i + 1 >= player1HealthNum)
+            //Hurt Player
+            if (i > player1HealthNum/2)
             {
-                if (player1HealthUI[i] != null) // Check if its active
-                {
-                    player1HealthUI[i].SetActive(false);
-                }
+                player1HealthUI[i].SetActive(false); //Set False
+
             }
 
-            // If the current index (i) is less than or equal to the Target Number, Activate
-            if (i <= player1HealthNum)
+            //Heal Player
+            if (i < player1HealthNum/2)
             {
-                if (player1HealthUI[i] != null) // Check if its active
-                {
-                    player1HealthUI[i].SetActive(true);
-                }
+                player1HealthUI[i].SetActive(true);
+
             }
         }
 
@@ -79,21 +75,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < player1AbilitySpriteRender.Length; i++)
         {
-            // If the current index (i) is greater than or equal to the Target Number, Deactivate
-            if (i + 1 >= player1AbilityNum)
+            // Decrease Player ability
+            if (i > player1AbilityNum)
             {
                 if (player1AbilitySpriteRender[i] != null) // Check if its active
                 {
-                    player1AbilitySpriteRender[i].sprite = deactiveAbilitySprite;
+                    player1AbilitySpriteRender[i].sprite = deactiveAbilitySprite; //Toggle to active
                 }
             }
 
-            // If the current index (i) is less than or equal to the Target Number, Activate
-            if (i <= player1AbilityNum)
+            // Increase Player Ability
+            if (i < player1AbilityNum)
             {
                 if (player1AbilitySpriteRender[i] != null) // Check if its active
                 {
-                    player1AbilitySpriteRender[i].sprite = tealActiveAbilitySprite;
+                    player1AbilitySpriteRender[i].sprite = tealActiveAbilitySprite; //Toggle to active
                 }
             }
         }
@@ -104,8 +100,8 @@ public class GameManager : MonoBehaviour
     {
             for (int i = 0; i < player1AbilitySpriteRender.Length; i++)
         {
-            // If the current index (i) is greater than or equal to the Target Number, Deactivate
-            if (i + 1 >= player2HealthNum)
+            //Hurt Player
+            if (i > player2HealthNum/2)
             {
                 if (player2HealthUI[i] != null) // Check if its active
                 {
@@ -113,8 +109,8 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            // If the current index (i) is less than or equal to the Target Number, Activate
-            if (i <= player2HealthNum)
+            //Heal Player
+            if (i < player2HealthNum/2)
             {
                 if (player2HealthUI[i] != null) // Check if its active
                 {
@@ -128,21 +124,21 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < player2AbilitySpriteRender.Length; i++)
         {
-            // If the current index (i) is greater than or equal to the Target Number, Deactivate
-            if (i + 1 >= player2AbilityNum)
+            // Decrease Player Ability
+            if (i > player2AbilityNum)
             {
                 if (player2AbilitySpriteRender[i] != null) // Check if its active
                 {
-                    player2AbilitySpriteRender[i].sprite = deactiveAbilitySprite;
+                    player2AbilitySpriteRender[i].sprite = deactiveAbilitySprite; //Toggle to active
                 }
             }
 
-            // If the current index (i) is less than or equal to the Target Number, Activate
-            if (i <= player2AbilityNum)
+            // Increase Player Ability
+            if (i < player2AbilityNum)
             {
                 if (player2AbilitySpriteRender[i] != null) // Check if its active
                 {
-                    player2AbilitySpriteRender[i].sprite = redActiveAbilitySprite; 
+                    player2AbilitySpriteRender[i].sprite = redActiveAbilitySprite; //Toggle to active
                 }
             }
         }

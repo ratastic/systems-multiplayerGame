@@ -35,12 +35,15 @@ public class Basic_PlayerControls : MonoBehaviour
     private GameManager gameManager;
     private PlayerInformation playerInfo;
 
+    public GameObject spriteEye;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         gameManager = FindFirstObjectByType<GameManager>();
         playerFlipScript = GetComponent<FlipPlayer>();
         playerInfo = GetComponent<PlayerInformation>();
+
     }
 
     // Update is called once per frame
@@ -160,7 +163,9 @@ public class Basic_PlayerControls : MonoBehaviour
 
         gameObject.GetComponent<Floaty_PlayerControls>().enabled = true; //Enable new Controls
         playerInput.SwitchCurrentActionMap("Floaty_Gameplay"); //Switch Action Inputs
-    
+
+        spriteEye.SetActive(false);
+
         Speedy_PlayerControlers otherscript = GetComponent<Speedy_PlayerControlers>();
         Destroy(otherscript); //Destroy other script
         Destroy(this); //Destroy this script
@@ -172,6 +177,8 @@ public class Basic_PlayerControls : MonoBehaviour
 
         playerInfo.PlayerAssignedFly = true;
         playerInfo.ActivateUI();
+
+        spriteEye.SetActive(false);
 
         gameObject.GetComponent<Speedy_PlayerControlers>().enabled = true; //Enable new Controls
         playerInput.SwitchCurrentActionMap("Speedy_Gameplay"); //Switch Action Inputs

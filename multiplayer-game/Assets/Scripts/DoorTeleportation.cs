@@ -24,7 +24,6 @@ public class DoorTeleportation : MonoBehaviour
     {
         if (floatySpawned == true && speedySpawned == true)
         {
-            Debug.Log("both players in new scene!!!");
             bossCam.SetActive(true);
             lobbyCam.SetActive(false);
             spiderBoss.SetActive(true);

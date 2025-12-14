@@ -1,29 +1,35 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class PlayerInformation : MonoBehaviour
 {
     private static int PlayerNumber = 1;
     private GameManager gameManager;
+    private int thisPlayerNum;
 
     public bool playerIsDead;
     public int PlayerHealthNum;
     public int PlayerAbilityNum;
-    public int PlayerMaxHealth = 100;
+    public int PlayerMaxHealth = 12;
     public int OrbHealAmount = 3;
 
     public bool PlayerAssignedCricket = false;
     public bool PlayerAssignedFly = false;
+
+    private UIToggles uiManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //Log Player Number!
         Debug.Log($"hi i am player {PlayerNumber}");
+        thisPlayerNum = PlayerNumber;
         PlayerNumber++;
 
         gameManager = FindFirstObjectByType<GameManager>();
+        uiManager = FindFirstObjectByType<UIToggles>();
 
         PlayerHealthNum = PlayerMaxHealth;
     
@@ -32,7 +38,7 @@ public class PlayerInformation : MonoBehaviour
 
     public void ActivateUI()
     {
-        if (PlayerNumber == 1)
+        if (thisPlayerNum == 1)
         {
             //Activate P1 UI
             gameManager.player1UI.SetActive(true);
@@ -47,7 +53,7 @@ public class PlayerInformation : MonoBehaviour
                 gameManager.AssignProfileSprite(gameManager.player1ProfileSpriteRender, gameManager.Fly);
             }
         }
-        else if (PlayerNumber == 2)
+        else if (thisPlayerNum == 2)
         {
             //Activate P2 UI
             gameManager.player2UI.SetActive(true);
@@ -66,7 +72,7 @@ public class PlayerInformation : MonoBehaviour
 
     public void UpdateUI()
     {
-        if (PlayerNumber == 1)
+        if (thisPlayerNum == 1)
         {
             //Check if player is dead
             if (playerIsDead == true)
@@ -85,7 +91,7 @@ public class PlayerInformation : MonoBehaviour
             gameManager.UpdatePlayerHealth1();
 
         }
-        else if (PlayerNumber == 2)
+        else if (thisPlayerNum == 2)
         {
             if (playerIsDead == true)
             {
@@ -152,6 +158,10 @@ public class PlayerInformation : MonoBehaviour
         playerIsDead = true;
         UpdateUI();
     }
-
+    public void OnMunu(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            uiManager.ToggleInGameMenu();
+    }
 
 }

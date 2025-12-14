@@ -41,18 +41,26 @@ public class Speedy_PlayerControlers : MonoBehaviour
 
     private bool isWallSliding;
     public float wallSlideSpeed = -2f;
-   // private DoorTeleportation doorTeleportation;
+    // private DoorTeleportation doorTeleportation;
+
+    private SpriteRenderer playerSpriteRenderer;
+    public Sprite flySprite;
+    private CollectOrbs healthScript;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         playerFlipScript = GetComponent<FlipPlayer>();
+        playerSpriteRenderer = GetComponent<SpriteRenderer>();
+        healthScript = GetComponent<CollectOrbs>();
+
     }
 
-    // private void Start()
-    // {
-    //     doorTeleportation = FindFirstObjectByType<DoorTeleportation>();
-    // }
+    private void Start()
+    {
+        //doorTeleportation = FindFirstObjectByType<DoorTeleportation>();
+        playerSpriteRenderer.sprite = flySprite;
+    }
 
     // Update is called once per frame
     void Update()
@@ -160,4 +168,10 @@ public class Speedy_PlayerControlers : MonoBehaviour
         }
 
     }
+    public void OnAbility(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            healthScript.StartAbility();
+    }
+   
 }

@@ -10,6 +10,7 @@ public class SceneTransition : MonoBehaviour
 
     public bool sceneCanTranstition;
     public GameObject door;
+    public GameObject selectCharacterText;
     public GameObject bossCam;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +28,7 @@ public class SceneTransition : MonoBehaviour
         if (sceneCanTranstition == true)
         {
             door.SetActive(true);
+            selectCharacterText.SetActive(false);
         }
     }
 

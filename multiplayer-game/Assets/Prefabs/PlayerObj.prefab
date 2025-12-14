@@ -125,7 +125,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -349,6 +349,86 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: acd35cf6-e373-4594-a600-62eb16fb88ee
     m_ActionName: 'Speedy_Gameplay/Sprint[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7863340887579279911}
+        m_TargetAssemblyTypeName: Speedy_PlayerControlers, Assembly-CSharp
+        m_MethodName: OnAbility
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e86864b6-fc36-446a-a769-55b31eeb120e
+    m_ActionName: 'Speedy_Gameplay/Ability[/Keyboard/x,/XInputControllerWindows/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 652462297184569494}
+        m_TargetAssemblyTypeName: Floaty_PlayerControls, Assembly-CSharp
+        m_MethodName: OnAbility
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f336f321-8d17-422c-97b7-ca38a35774d3
+    m_ActionName: 'Floaty_Gameplay/Ability[/Keyboard/x,/XInputControllerWindows/buttonWest]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4064193470990443470}
+        m_TargetAssemblyTypeName: PlayerInformation, Assembly-CSharp
+        m_MethodName: OnMunu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c0702385-f2b7-4089-9971-73acf73c4f14
+    m_ActionName: 'Basic_Gameplay/Menu[/Keyboard/tab,/XInputControllerWindows/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4064193470990443470}
+        m_TargetAssemblyTypeName: PlayerInformation, Assembly-CSharp
+        m_MethodName: OnMunu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c9962ca6-5e43-4094-a995-c34799f2cca9
+    m_ActionName: 'Speedy_Gameplay/Menu[/Keyboard/tab,/XInputControllerWindows/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4064193470990443470}
+        m_TargetAssemblyTypeName: PlayerInformation, Assembly-CSharp
+        m_MethodName: OnMunu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b6a929a2-a228-498b-86ee-da9dce85b392
+    m_ActionName: 'Floaty_Gameplay/Menu[/Keyboard/tab,/XInputControllerWindows/start]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Basic_Gameplay
@@ -378,6 +458,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerInput: {fileID: 2224545985106084957}
+  spriteEye: {fileID: 6479432961166911752}
 --- !u!50 &-4140243578979433838
 Rigidbody2D:
   serializedVersion: 5
@@ -420,10 +501,11 @@ MonoBehaviour:
   playerIsDead: 0
   PlayerHealthNum: 0
   PlayerAbilityNum: 0
-  PlayerMaxHealth: 100
+  PlayerMaxHealth: 12
   OrbHealAmount: 3
   PlayerAssignedCricket: 0
   PlayerAssignedFly: 0
+  uiManager: {fileID: 0}
 --- !u!114 &7863340887579279911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +538,7 @@ MonoBehaviour:
   wallJumpForce: 10
   wallJumpPush: 10
   wallSlideSpeed: -4
+  flySprite: {fileID: 6662972761176085768, guid: 33071fddb8520254692ccb140cb49313, type: 3}
 --- !u!114 &652462297184569494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,8 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b911d42ab91d1f42af0696750227af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Floaty_PlayerControls
-  speed: 1
-  jumpForce: 15
+  speed: 2
+  jumpForce: 10
   fallGravity: 2
   lowJumpGravity: 4
   coyoteTime: 0.15
@@ -480,9 +563,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxJumps: 2
-  dashForce: 20
+  dashForce: 15
   dashDuration: 0.15
   dashCooldown: 0.3
+  cricketSprite: {fileID: -3863798485776469233, guid: 223454b550e851241b6cf55e3fd724fd, type: 3}
 --- !u!114 &-4286752867601993302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,10 +607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34424abe2281c4e5f86d4cda7832ae04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossDamage
-  handDamage: 5
-  venomDamage: 6
-  eggDamage: 4
-  spikeDamage: 3
+  handDamage: 1
+  venomDamage: 1
+  eggDamage: 1
+  spikeDamage: 1
   cooldown: 5
   canBeHit: 0
   flashColor: {r: 1, g: 0, b: 0, a: 1}
