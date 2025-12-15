@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerInformation : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerInformation : MonoBehaviour
     public bool PlayerAssignedFly = false;
 
     private UIToggles uiManager;
+    private ScreenTransitions transitionAnimation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +32,7 @@ public class PlayerInformation : MonoBehaviour
 
         gameManager = FindFirstObjectByType<GameManager>();
         uiManager = FindFirstObjectByType<UIToggles>();
+        transitionAnimation = FindFirstObjectByType<ScreenTransitions>();
 
         PlayerHealthNum = PlayerMaxHealth;
     
@@ -79,6 +82,7 @@ public class PlayerInformation : MonoBehaviour
             {
                 //Set Death Sprite for Player 1
                 gameManager.AssignProfileSprite(gameManager.player1ProfileSpriteRender, gameManager.Skull);
+                StartCoroutine(KillPlayerReset());
                 return;
             }
 
@@ -97,6 +101,7 @@ public class PlayerInformation : MonoBehaviour
             {
                 //Set Death Sprite for Player 2
                 gameManager.AssignProfileSprite(gameManager.player2ProfileSpriteRender, gameManager.Skull);
+                StartCoroutine(KillPlayerReset());
                 return;
             }
 
@@ -109,6 +114,14 @@ public class PlayerInformation : MonoBehaviour
             gameManager.UpdatePlayerHealth2();
 
         }
+    }
+
+    IEnumerator KillPlayerReset()
+    {
+        transitionAnimation.DeathAnimationStart();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
     public void ResetAbiliyScore()

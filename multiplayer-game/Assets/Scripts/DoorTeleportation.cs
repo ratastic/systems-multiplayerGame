@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UIElements.Experimental;
 
 public class DoorTeleportation : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DoorTeleportation : MonoBehaviour
 
     public bool gameIsNotReady = true;
     public GameObject spiderBoss;
+    public ScreenTransitions transitionAnimations;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,8 +25,15 @@ public class DoorTeleportation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+    }
+
+    IEnumerator MovePlayers()
+    {
         if (floatySpawned == true && speedySpawned == true)
         {
+            transitionAnimations.StartScreenTransition();
+            yield return new WaitForSeconds(0.5f);
             bossCam.SetActive(true);
             lobbyCam.SetActive(false);
             spiderBoss.SetActive(true);
@@ -31,10 +41,6 @@ public class DoorTeleportation : MonoBehaviour
             FindFirstObjectByType<Floaty_PlayerControls>().enabled = true;
             FindFirstObjectByType<Speedy_PlayerControlers>().enabled = true;
         }
-        // else 
-        // {
-        //     gameIsNotReady = true;
-        // }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -46,6 +52,7 @@ public class DoorTeleportation : MonoBehaviour
             floaty.transform.position = floatySpawn;
             floatySpawned = true;
             floaty.enabled = false;
+            StartCoroutine(MovePlayers());
         }
 
         Speedy_PlayerControlers speedy = col.gameObject.GetComponent<Speedy_PlayerControlers>();
@@ -55,6 +62,7 @@ public class DoorTeleportation : MonoBehaviour
             speedy.transform.position = speedySpawn;
             speedySpawned = true;
             speedy.enabled = false;
+            StartCoroutine(MovePlayers());
         }
     }
 }

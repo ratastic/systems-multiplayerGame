@@ -35,12 +35,8 @@ public class CollectOrbs : MonoBehaviour
     {
         if (canUseAbility == true)
         {
-            Debug.Log("can use ability");
+            UseAbility();
 
-            if (Input.GetKeyDown(KeyCode.P) && playerInformation.PlayerHealthNum < playerInformation.PlayerMaxHealth) // change this so that xbox controller reads it 
-            {
-                UseAbility();
-            }
         }
     }
     

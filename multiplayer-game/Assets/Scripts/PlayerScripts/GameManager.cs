@@ -103,19 +103,15 @@ public class GameManager : MonoBehaviour
             //Hurt Player
             if (i > player2HealthNum/2)
             {
-                if (player2HealthUI[i] != null) // Check if its active
-                {
-                    player2HealthUI[i].SetActive(false);
-                }
+                player2HealthUI[i].SetActive(false);
+
             }
 
             //Heal Player
             if (i < player2HealthNum/2)
             {
-                if (player2HealthUI[i] != null) // Check if its active
-                {
-                    player2HealthUI[i].SetActive(true);
-                }
+                player2HealthUI[i].SetActive(true);
+
             }
         }
 
