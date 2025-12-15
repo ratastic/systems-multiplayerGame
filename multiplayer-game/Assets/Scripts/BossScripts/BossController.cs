@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class BossController : MonoBehaviour
 {
+    private Animator bossAnim;
+
     [Header("Fire Radius Settings")]
     public GameObject fireCubePrefab;
     public int fireSegments = 20;
@@ -16,6 +18,8 @@ public class BossController : MonoBehaviour
     public int spiderCount = 5;
     public float spiderSpawnHeight = 5f;
     public float spiderSpread = 1.5f;
+    public Sprite[] eggSprites = new Sprite[2];
+    public SpriteRenderer eggSR;
 
     [Header("Glow Settings")]
     public float glowDuration = 0.5f;
@@ -34,6 +38,7 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
+        bossAnim = GetComponent<Animator>();
 
         if (bossSprite != null)
         {
@@ -106,7 +111,7 @@ public class BossController : MonoBehaviour
 
     private SpiderState RandomAttack() // RANDOM ATTACK PLAYED AFTER IDLE STATE / GRACE PERIOD
     {
-        int r = Random.Range(1, 4);
+        int r = Random.Range(1, 5);
         while (previousState == currentState && r == currentState)
         {
             r = Random.Range(1, 4);
@@ -130,6 +135,7 @@ public class BossController : MonoBehaviour
 
     private void Idle() // RETURNS TO IDLE STATE AFTER EVERY ATTACK
     {
+        bossAnim.SetBool("isIdle", true);
         // call idle animation here
         if (timer >= timeNeededToWait)
         {
@@ -164,10 +170,13 @@ public class BossController : MonoBehaviour
 
     private void Punch()
     {
+        bossAnim.SetBool("isPunching", true);
+        Debug.Log("punch state");
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
             coroutineStarted = false;
+            bossAnim.SetBool("isPunching", false);
             currentSpiderState = SpiderState.Idle;
             timeNeededToWait = randomIdleLength;
         }
@@ -236,6 +245,10 @@ public class BossController : MonoBehaviour
         {
             Debug.Log("it's raining spiders aaa");
             Vector3 pos = transform.position + new Vector3(Random.Range(-spiderSpread, spiderSpread), spiderSpawnHeight, 0);
+
+            int index = Random.Range(0, eggSprites.Length);
+            Debug.Log("egg sprite index: " + index);
+            eggSR.sprite = eggSprites[index];
 
             GameObject spider = Instantiate(spiderPrefab, pos, Quaternion.identity);
 
