@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 
 public class BossController : MonoBehaviour
 {
@@ -36,8 +37,13 @@ public class BossController : MonoBehaviour
     private int previousState = -1;
     private int currentState = -1;
 
+    public GameObject[] hitBoxes = new GameObject[3];
+    
+    private CinemachineImpulseSource impulseSource;
+
     private void Start()
     {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         bossAnim = GetComponent<Animator>();
 
         if (bossSprite != null)
@@ -47,8 +53,8 @@ public class BossController : MonoBehaviour
        
         currentSpiderState = SpiderState.Begin;
         timer = 0;
-        timeNeededToWait = 5.0f;
-        randomIdleLength = Random.Range(5f, 8f);
+        timeNeededToWait = 2.8f;
+        randomIdleLength = Random.Range(1f, 4f);
         //StartCoroutine(BossLoop());
     }
 
@@ -101,6 +107,11 @@ public class BossController : MonoBehaviour
                 Rain();
                 break;
             case SpiderState.PunchGround:
+                if (!coroutineStarted)
+                {
+                    coroutineStarted = true;
+                    StartCoroutine(Rumble());
+                }
                 Punch();
                 break;
             case SpiderState.Death:
@@ -125,6 +136,7 @@ public class BossController : MonoBehaviour
 
     private void Emerge()
     {
+        
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
@@ -142,16 +154,18 @@ public class BossController : MonoBehaviour
             timer = 0.0f;
             coroutineStarted = false;
             currentSpiderState = RandomAttack();
-            timeNeededToWait = 1f;
+            timeNeededToWait = 1.5f;
         }
     }
 
     private void Fire()
     {
+        bossAnim.SetBool("isSpitting", true);
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
             coroutineStarted = false;
+            bossAnim.SetBool("isSpitting", false);
             currentSpiderState = SpiderState.Idle;
             timeNeededToWait = randomIdleLength;
         }
@@ -159,10 +173,12 @@ public class BossController : MonoBehaviour
 
     private void Rain()
     {
+        bossAnim.SetBool("isRaining", true);
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
             coroutineStarted = false;
+            bossAnim.SetBool("isRaining", false);
             currentSpiderState = SpiderState.Idle;
             timeNeededToWait = randomIdleLength;
         }
@@ -170,12 +186,20 @@ public class BossController : MonoBehaviour
 
     private void Punch()
     {
+        foreach (GameObject hb in hitBoxes)
+        {
+            hb.SetActive(true);
+        }
         bossAnim.SetBool("isPunching", true);
         Debug.Log("punch state");
         if (timer >= timeNeededToWait)
         {
             timer = 0.0f;
             coroutineStarted = false;
+            foreach (GameObject hb in hitBoxes)
+            {
+                hb.SetActive(false);
+            }
             bossAnim.SetBool("isPunching", false);
             currentSpiderState = SpiderState.Idle;
             timeNeededToWait = randomIdleLength;
@@ -187,7 +211,6 @@ public class BossController : MonoBehaviour
         Debug.Log("players win :-)");
     }
 
-
     // COROUTINES F0R THE DIFFERENT SPIDER STATES
     //fire radius
     IEnumerator FireRadiusBurst()
@@ -197,14 +220,16 @@ public class BossController : MonoBehaviour
             Debug.LogError("FireCube prefab missing!");
             yield break;
         }
-
+        yield return new WaitForSeconds(.8f);
         for (int i = 0; i < fireSegments; i++)
         {
             Debug.Log("fire is spreading");
             float angle = i * Mathf.PI * 2f / fireSegments;
             Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
 
-            Vector3 startPos = transform.position + dir * fireRadius;
+            Vector3 startPos = new Vector3(43.56f, 2.01f, 0f);
+            
+            //transform.position + dir * fireRadius;
 
             GameObject cube = Instantiate(fireCubePrefab, startPos, Quaternion.identity);
 
@@ -213,6 +238,16 @@ public class BossController : MonoBehaviour
         }
 
         yield return null;
+    }
+
+    IEnumerator Rumble()
+    {
+        yield return new WaitForSeconds(.2f);
+        CamRumbleManager.instance.CamRumble(impulseSource);
+        yield return new WaitForSeconds(.8f);
+        CamRumbleManager.instance.CamRumble(impulseSource);
+        yield return new WaitForSeconds(.8f);
+        CamRumbleManager.instance.CamRumble(impulseSource);
     }
 
     IEnumerator ExpandAndDie(GameObject cube, Vector3 direction)
